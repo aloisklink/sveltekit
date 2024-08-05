@@ -666,7 +666,7 @@ declare module '@sveltejs/kit' {
 	 */
 	export type Handle = (input: {
 		event: RequestEvent;
-		resolve(event: RequestEvent, opts?: ResolveOptions): MaybePromise<Response>;
+		resolve: (event: RequestEvent, opts?: ResolveOptions) => MaybePromise<Response>;
 	}) => MaybePromise<Response>;
 
 	/**
