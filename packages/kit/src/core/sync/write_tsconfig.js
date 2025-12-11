@@ -100,7 +100,9 @@ export function get_tsconfig(kit) {
 			// generated options
 			paths: {
 				...get_tsconfig_paths(kit),
-				'$app/types': ['./types/index.d.ts']
+				// https://github.com/sveltejs/kit/pull/14207 forgot to update this path,
+				// which broke https://github.com/sveltejs/kit/pull/13864
+				'$app/types': ['./non-ambient.d.ts']
 			},
 			rootDirs: [config_relative('.'), './types'],
 
